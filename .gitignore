@@ -1,0 +1,13 @@
+# Ignore secrets and build files
+.env
+__pycache__/
+*.pyc
+*.pkl
+*.log
+*.db
+*.sqlite
+sandbox/logs/
+sandbox/screenshots/
+ml_model/feature_batches/
+phishing_dataset.db
+.vscode/

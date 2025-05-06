@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: phishai_api
+    ports:
+      - "8000:8000"
+    networks:
+      - phishnet
+    volumes:
+      - ./api:/app/api                    # 🔁 Live sync API code
+      - ./utils:/app/utils                # 🔁 Live sync utils (sandbox_client.py etc.)
+      - ./ml_model:/app/ml_model          # 🔁 Live sync model
+      - ./alerting:/app/alerting          # 🔁 Live sync alerting scripts
+      - ./sandbox/screenshots:/app/sandbox/screenshots
+      - ./sandbox/logs:/app/sandbox/logs
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: phishai_ui
+    ports:
+      - "8501:8501"
+    networks:
+      - phishnet
+    depends_on:
+      - api
+    env_file:
+      - .env
+    volumes:
+      - ./sandbox/screenshots:/app/sandbox/screenshots
+      - ./sandbox/logs:/app/sandbox/logs
+    restart: unless-stopped
+
+  sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile.sandbox
+    container_name: phishai_sandbox
+    networks:
+      - phishnet
+    volumes:
+      - ./sandbox/screenshots:/app/sandbox/screenshots
+      - ./sandbox/logs:/app/sandbox/logs
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    # privileged: false
+
+networks:
+  phishnet:
+

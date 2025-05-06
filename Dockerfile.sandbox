@@ -1,0 +1,61 @@
+# Use official Python base image
+FROM python:3.10-slim
+
+# Metadata (optional)
+LABEL maintainer="gehad@phishai.local"
+LABEL version="1.0"
+LABEL description="PhishAI Sandbox - Headless Chromium FastAPI Sandbox"
+
+# Environment variables for Python and Playwright
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+
+# Set work directory
+WORKDIR /app
+
+# Install Chromium dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    gnupg \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libgtk-3-0 \
+    libxss1 \
+    libasound2 \
+    libgbm-dev \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxcursor1 \
+    libxdamage1 \
+    libxi6 \
+    libxtst6 \
+    libxrandr2 \
+    libxshmfence1 \
+    libu2f-udev \
+    fonts-liberation \
+    libappindicator3-1 \
+    xdg-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+# Install Playwright Chromium browser
+RUN python -m playwright install chromium
+
+# Copy project files
+COPY sandbox /app/sandbox
+COPY api /app/api
+COPY alerting /app/alerting
+COPY utils /app/utils
+COPY entrypoint.sh /app/entrypoint.sh
+
+# Make entrypoint executable
+RUN chmod +x /app/entrypoint.sh
+
+# Entrypoint: starts the FastAPI sandbox
+ENTRYPOINT ["bash", "/app/entrypoint.sh"]
+

