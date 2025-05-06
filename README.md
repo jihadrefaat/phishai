@@ -143,24 +143,24 @@ Want smarter alerts? You can extend alert logic inside the FastAPI or sandbox mi
 
 | Screenshot | Description |
 | ---------- | ----------- |
-| ![](sandbox/screenshots/ui.png) | 🧠 Streamlit UI |
-| ![](sandbox/screenshots/sandbox fake amazon.png) | 🧪 Fake Amazon in sandbox |
-| ![](sandbox/screenshots/sandbox fake amazon 2.png) | 🧪 Fake Amazon - 2nd run |
-| ![](sandbox/screenshots/ai+thread intel fake amazon2.png) | 🤖 AI + Threat Intel (Amazon) |
-| ![](sandbox/screenshots/ai+thread intel fake amazon.jpeg) | 🧠 AI scan - Fake Amazon (JPEG) |
-| ![](sandbox/screenshots/ai + thread intel metamask 2.png) | 🤖 Metamask analysis |
-| ![](sandbox/screenshots/ai + thread intel metamask.jpeg) | 🧠 AI + TI - Metamask (JPEG) |
-| ![](sandbox/screenshots/sandbox fake metamask login.png) | 🧪 Sandbox - Metamask |
-| ![](sandbox/screenshots/sandbox fake metamask login 2.png) | 🔁 Sandbox - Metamask rerun |
-| ![](sandbox/screenshots/sandbox fake metamask login 3.png) | 🔁 Sandbox - Metamask 3 |
-| ![](sandbox/screenshots/sandbox simulated phishing page.png) | 🧪 Simulated phishing test |
-| ![](sandbox/screenshots/sandbox simulated phishing page 2.png) | 🔁 Simulated phishing test 2 |
-| ![](sandbox/screenshots/sandbox benign.png) | ✅ Sandbox - Benign case |
-| ![](sandbox/screenshots/AI+thread intel benign.png) | ✅ AI Verdict - Benign |
-| ![](sandbox/screenshots/AI+thread intel benign 2 .png) | ✅ AI Verdict - Benign (Alt) |
-| ![](sandbox/screenshots/AI+thread intel phishing.jpeg) | 🚨 AI Verdict - Phishing (JPEG) |
-| ![](sandbox/screenshots/AI+thread intel phishing  2.png) | 🚨 AI + TI - Phishing case |
-| ![](sandbox/screenshots/sandbox logs.png) | 🗂️ JSON Log Directory Screenshot |
+| ![](screenshots/ui.png) | 🧠 Streamlit UI |
+| ![](screenshots/sandbox fake amazon.png) | 🧪 Fake Amazon in sandbox |
+| ![](screenshots/sandbox fake amazon 2.png) | 🧪 Fake Amazon - 2nd run |
+| ![](screenshots/ai+thread intel fake amazon2.png) | 🤖 AI + Threat Intel (Amazon) |
+| ![](screenshots/ai+thread intel fake amazon.jpeg) | 🧠 AI scan - Fake Amazon (JPEG) |
+| ![](screenshots/ai + thread intel metamask 2.png) | 🤖 Metamask analysis |
+| ![](screenshots/ai + thread intel metamask.jpeg) | 🧠 AI + TI - Metamask (JPEG) |
+| ![](screenshots/sandbox fake metamask login.png) | 🧪 Sandbox - Metamask |
+| ![](creenshots/sandbox fake metamask login 2.png) | 🔁 Sandbox - Metamask rerun |
+| ![](screenshots/sandbox fake metamask login 3.png) | 🔁 Sandbox - Metamask 3 |
+| ![](screenshots/sandbox simulated phishing page.png) | 🧪 Simulated phishing test |
+| ![](screenshots/sandbox simulated phishing page 2.png) | 🔁 Simulated phishing test 2 |
+| ![](screenshots/sandbox benign.png) | ✅ Sandbox - Benign case |
+| ![](screenshots/AI+thread intel benign.png) | ✅ AI Verdict - Benign |
+| ![](screenshots/AI+thread intel benign 2 .png) | ✅ AI Verdict - Benign (Alt) |
+| ![](screenshots/AI+thread intel phishing.jpeg) | 🚨 AI Verdict - Phishing (JPEG) |
+| ![](screenshots/AI+thread intel phishing  2.png) | 🚨 AI + TI - Phishing case |
+| ![](screenshots/sandbox logs.png) | 🗂️ JSON Log Directory Screenshot |
 
 </details>
 
