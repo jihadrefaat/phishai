@@ -1,5 +1,12 @@
 # 🎯 PhishAI - Advanced Phishing Detection Platform
 
+![GitHub stars](https://img.shields.io/github/stars/jihadrefaat/phishai?style=social)
+![GitHub forks](https://img.shields.io/github/forks/jihadrefaat/phishai?style=social)
+![GitHub license](https://img.shields.io/github/license/jihadrefaat/phishai)
+![GitHub language](https://img.shields.io/github/languages/top/jihadrefaat/phishai)
+
+
+
 PhishAI is an end-to-end phishing detection and analysis platform that combines AI-based link classification, dynamic sandbox behavior analysis, and real-time threat intelligence.
 
 It’s built for SOC teams, threat researchers, and cybersecurity professionals to analyze suspicious URLs in a safe, automated, and insightful environment.
